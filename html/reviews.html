@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style.css" type="text/css">
+    <title>Отзывы</title>
+</head>
+<body>
+    <header>
+        <div class = "header-inner">
+            <h1 class="logo">Котокафе "Мурлыка"</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главнвя</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="menu.html" class="active">Меню кафе</a></li>
+                    <li><a href="gallery.html">Галерея</a></li>
+                    <li><a href="contact.html">Контакты</a></li>
+                    <li><a href="reviews.html">Отзывы</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!---->
+    <main>
+         <h2>Отзывы</h2>
+        <p>Поделитесь своим впечатлением о нашем котокафе.
+           Поставьте оценку и напишите пару слов — нам важно ваше мнение!</p>
+
+        <h3>Оставить свой отзыв</h3>
+        <form id="reviewForm" onsubmit="return addReview(event)" novalidate>
+
+            <div class="form-group">
+                <label for="reviewName">Ваше имя: *</label>
+                <input type="text" id="reviewName" name="reviewName">
+                <div class="error-message" id="reviewNameError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="reviewRating">Ваша оценка (от 1 до 5): *</label>
+                <select id="reviewRating" name="reviewRating">
+                    <option value="">-- Выберите оценку --</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <div class="error-message" id="reviewRatingError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="reviewText">Текст отзыва: *</label>
+                <textarea id="reviewText" name="reviewText" rows="5"></textarea>
+                <div class="error-message" id="reviewTextError"></div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Оставить отзыв</button>
+            </div>
+        </form>
+        
+        <div class="reviews-list" id="reviewsList"></div>
+    </main>
+    <!---->
+    <footer>
+        <p><strong>Свяжитесь с нами:</strong></p>
+        <p>Телефон: +7 (999) 123-45-67</p>
+        <p>Email: info@murlyka.ru</p>
+        <p>Адрес: г. Москва, ул. Пушистая, д. 15</p>
+    </footer>
+</body>
+</html>
