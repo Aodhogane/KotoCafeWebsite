@@ -1,7 +1,6 @@
 header{
     background-color: #d2b48c;
     padding: 15px 30px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
 }
 
 body{
@@ -16,10 +15,25 @@ body{
     min-height: 100vh;
 }
 
+main {
+    flex: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
 p{
     text-align: justify;
     text-indent: 30px;
     line-height: 1.6;
+}
+
+p::first-letter {
+    font-size: 150%;
+    color: #d2691e;
+    font-weight: bold;
 }
 
 a:link {
@@ -27,9 +41,14 @@ a:link {
     text-decoration: none;
 }
 
-a:visited {
-    color: #a0522d;
+a:visited{
+    color: #d2691e;
     text-decoration: none;
+}
+
+a:hover{
+    color: #ce8551;
+    text-decoration: underline;
 }
 
 a:active {
@@ -42,7 +61,11 @@ table{
     width: 90%;
     margin: 20px auto;
     background-color: #fffaf0;
-    box-shadow: 0 0 10px rgb(0, 0, 0, 0.1);
+}
+
+th {
+    background-color: #deb887;
+    color: #4a2c0f;
 }
 
 th, td {
@@ -51,19 +74,14 @@ th, td {
     text-align: left;
 }
 
-tr:nth-child(even) {
-    background-color: #f5deb3;
+tr:nth-child(even){
+    background-color: #dea4307a;
 }
 
-th {
-    background-color: #deb887;
-    color: #4a2c0f;
-}
-
-caption {
-    font-weight: bold;
-    padding: 8px;
-    color: #8b4513;
+caption { 
+    font-weight: bold; 
+    padding: 8px; 
+    color: #8b4513; 
 }
 
 .header-inner{
@@ -84,10 +102,32 @@ caption {
 }
 
 .gallery{
-    display:flex; 
-    flex-wrap:wrap; 
-    gap:12px; 
-    justify-content:center;
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 12px; 
+    justify-content: center;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.carousel-track{
+    display: flex;
+    transition: transform 0.7s ease-in-out;
+}
+
+.carousel-track img{
+    width: 50%;
+    flex-shrink: 0;
+    display: block;
+    object-fit: cover;
+    height: auto;
 }
 
 .catGallry{
@@ -101,4 +141,11 @@ caption {
     margin: 0 0 15px 20px;
     border-radius: 10px;
     max-width: 350px;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    min-height: 14px;
 }
