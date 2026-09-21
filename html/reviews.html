@@ -4,65 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/style.css" type="text/css">
-    <title>Отзывы</title>
-    <script src="../JS/script.js" defer></script>
+    <title>Регистрация</title>
 </head>
+
 <body>
     <header>
-        <div class = "header-inner">
-            <h1 class="logo">Котокафе "Мурлыка"</h1>
+        <div class="header-inner">
+            <h1 class="logo">Котокафе <span>«Мурлыка»</span></h1>
             <nav>
                 <ul>
-                    <li><a href="index.html">Главнвя</a></li>
+                    <li><a href="index.html">Главная</a></li>
                     <li><a href="about.html">О нас</a></li>
                     <li><a href="menu.html">Меню кафе</a></li>
                     <li><a href="gallery.html">Галерея</a></li>
                     <li><a href="contact.html">Контакты</a></li>
-                    <li><a href="reviews.html">Отзывы</a></li>
+                    <li><a href="reviews.html">Регистрация</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <!---->
     <main>
-         <h2>Отзывы</h2>
-        <p>Поделитесь своим впечатлением о нашем котокафе.
-           Поставьте оценку и напишите пару слов — нам важно ваше мнение!</p>
-
-        <h3>Оставить свой отзыв</h3>
-        <form id="reviewForm" onsubmit="return addReview(event)" novalidate>
-
-            <div>
-                <label for="reviewName">Ваше имя: </label>
-                <input type="text" id="reviewName" name="reviewName">
-                <div class="error-message" id="reviewNameError"></div>
-            </div>
-
-            <div>
-                <label for="reviewRating">Ваша оценка (от 1 до 5): *</label>
-                <select id="reviewRating" name="reviewRating">
-                    <option value="">Выберите оценку</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
+        <h2>Регистрация</h2>
+        <p>
+            Зарегистрируйтесь на нашем сайте, чтобы получать информацию
+            о котокафе «Мурлыка».
+        </p>
+        <form id="registrationForm">
+            <p>
+                <label for="name">Ваше имя: *</label><br>
+                <input type="text" id="name" name="name">
+                <span id="nameError" class="error-message"></span>
+            </p>
+            <p>
+                <label for="password">Пароль: *</label><br>
+                <input type="password" id="password" name="password">
+                <span id="passwordError" class="error-message"></span>
+            </p>
+            <p>
+                <label for="passwordConfirm">Подтверждение пароля: *</label><br>
+                <input type="password" id="passwordConfirm" name="passwordConfirm">
+                <span id="passwordConfirmError" class="error-message"></span>
+            </p>
+            <p>
+                <label for="email">Электронный адрес: *</label><br>
+                <input type="email" id="email" name="email">
+                <span id="emailError" class="error-message"></span>
+            </p>
+            <p>
+                Ваш пол:<br>
+                <label>
+                    <input type="radio" name="gender" value="male">
+                    Мужской
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="female">
+                    Женский
+                </label>
+                <br>
+                <span id="genderError" class="error-message"></span>
+            </p>
+            <p>
+                <label for="status">Ваш статус:</label><br>
+                <select id="status" name="status">
+                    <option value="">Выберите статус</option>
+                    <option value="pupil">Учащийся</option>
+                    <option value="student">Студент</option>
+                    <option value="postgraduate">Аспирант</option>
+                    <option value="employee">Служащий</option>
+                    <option value="unemployed">Безработный</option>
+                    <option value="retired">Пенсионер</option>
                 </select>
-                <div id="reviewRatingError"></div>
-            </div>
+                <span id="statusError" class="error-message"></span>
+            </p>
+            <p>
+                <label for="subject">Тема сообщения:</label><br>
+                <input type="text" id="subject" name="subject">
+                <span id="subjectError" class="error-message"></span>
+            </p>
+            <p>
+                <label for="message">Сообщение:</label><br>
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    cols="40"></textarea>
 
-            <div>
-                <label for="reviewText">Текст отзыва: </label>
-                <textarea id="reviewText" name="reviewText" rows="5"></textarea>
-                <div class="error-message" id="reviewTextError"></div>
-            </div>
-
-            <div>
-                <button type="submit">Оставить отзыв</button>
-            </div>
+                <span id="messageError" class="error-message"></span>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" id="replyEmail" name="replyEmail">
+                    Хочу получить ответ по электронной почте
+                </label>
+            </p>
+            <p>
+                <button type="submit">Зарегистрироваться</button>
+                <button type="reset">Очистить</button>
+            </p>
+            <p id="successMessage"></p>
         </form>
-
-        <div id="reviewsList"></div>
     </main>
     <!---->
     <footer>
@@ -71,5 +112,6 @@
         <p>Email: info@murlyka.ru</p>
         <p>Адрес: г. Москва, ул. Пушистая, д. 15</p>
     </footer>
+    <script src="../JS/scipt.js" defer></script>
 </body>
 </html>
